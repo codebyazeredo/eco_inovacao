@@ -1,0 +1,118 @@
+body {
+    padding: 20px;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.header {
+    height: 60px;
+    padding: 10px;
+    width: 100%;
+}
+
+.header__logo {
+    float: left;
+    width: 33%;
+}
+
+.header__report-name {
+    text-align: center;
+    float: left;
+    font-size: 24px;
+    font-weight: bold;
+    padding-top: 2%;
+    width: 33%;
+}
+
+.header__report-id {
+    float: right;
+    font-weight: bold;
+    padding-top: 2%;
+}
+
+.main-table {
+    border: 1px solid;
+    width: 100%;
+}
+
+.main-table--chained {
+    margin: 0px;
+    border-top: none;
+}
+
+.main-table--chained * {
+    border-top: none;
+}
+
+.main-table--fixed {
+    table-layout: fixed;
+}
+
+.main-table__data-container {
+    border: 1px solid black;
+    text-align: left;
+}
+
+.main-table__data-container--upside-another {
+    border-bottom: dotted;
+}
+
+.main-table__data-container--besides-another {
+    border-right: dotted;
+}
+
+.main-table__data-container--upside-besides-another {
+    border-bottom: dotted;
+    border-right: dotted;
+}
+
+.main-table__label {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px;
+    padding-top: 0px;
+    vertical-align: top;
+}
+
+.main-table__label--medium {
+    font-size: 20px;
+}
+
+.main-table__data-display {
+    font-size: 16px;
+    padding: 8px;
+}
+
+.main-table__data-display--small {
+    font-size: 10px;
+}
+
+.report-heading {
+    font-weight: bold;
+    font-size: 20px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 94.8%;
+    height: 100px;
+    padding: 10px;
+}
+
+.footer__signature-container {
+    float: left;
+    width: 40%;
+}
+
+.footer__center-block {
+    margin-left: 25%;
+    text-align: center;
+}
+
+.footer__signature-place {
+    border: 1px solid black;
+}

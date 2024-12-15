@@ -1,0 +1,148 @@
+/*
+* Input Container
+******************************************************************************/
+
+.element-container {
+    position: relative;
+}
+
+.icon-container {
+    position: absolute;
+    right: 10px;
+    top: calc(50% - 10px);
+}
+
+form .form-control[readonly],
+form .form-select[readonly] {
+    background-color: #eee;
+    pointer-events: none;
+}
+
+.element-container .loadable:not(.loading) ~ .icon-container {
+    display: none;
+}
+
+.element-container select.select2-hidden-accessible.loading ~ .select2-container--default .select2-selection--single .select2-selection__arrow b {
+    display: none;
+}
+
+.element-container .loadable.loading ~ .fv-plugins-icon {
+    display: none;
+}
+
+/*
+* flatpickr adjust Form Validation
+******************************************************************************/
+
+div:has(> .flatpickr-input.is-valid) > .input {
+    border-color: #9bc648
+}
+
+div:has(> .flatpickr-input.is-invalid) > .input {
+    border-color: #ea5455
+}
+
+/*
+* select2 adjust Form Validation
+******************************************************************************/
+
+form select.is-valid~.select2 .select2-selection, form select.selectpicker.is-valid~.btn {
+    border-color: #9bc648
+}
+
+form select.is-invalid~.select2 .select2-selection,
+form select.selectpicker.is-invalid~.btn {
+    border-color: #ea5455 !important
+}
+
+/*
+* Select2 adjust readonly
+******************************************************************************/
+
+select.select2-hidden-accessible[readonly]~.select2 .select2-selection, select.select2-hidden-accessible[readonly]~.select2 .select2-selection--single {
+    background-color: #eee;
+    pointer-events: none;
+}
+
+/*
+* Inputs adjust readonly
+******************************************************************************/
+
+.form-control[readonly] {
+    background-color: #eee;
+    pointer-events: none;
+}
+
+/*
+* Modal Btn Close
+******************************************************************************/
+
+.modal .close {
+    background: transparent url("data:image/svg+xml;charset=utf-8,%3Csvg width='19' height='18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m14 4.5-9 9' stroke='%234b465c' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='m14 4.5-9 9' stroke='%23fff' stroke-opacity='.2' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='m5 4.5 9 9' stroke='%234b465c' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='m5 4.5 9 9' stroke='%23fff' stroke-opacity='.2' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") 50%/1.5rem auto no-repeat;
+    border: 0;
+    border-radius: .375rem;
+    box-sizing: content-box;
+    color: #4b465c;
+    height: 1.125rem;
+    opacity: .5;
+    padding: .25em;
+    width: 1.125rem
+}
+
+/*
+* Dropzone Previewable
+******************************************************************************/
+.dz-preview.dz-complete.dz-previewable .dz-details .dz-thumbnail {
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fcfcfc;
+    z-index: 1;
+}
+
+.dz-preview.dz-complete.dz-previewable .dz-details .dz-thumbnail:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+}
+
+.dz-preview.dz-complete.dz-previewable .dz-details .dz-download-click {
+    color: #a5a3ae;
+    margin: 0 auto;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%) scale(1);
+    transform: translateY(-50%) scale(1);
+    font-size: .6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity .2s ease-in-out;
+}
+
+.dz-preview.dz-complete:not(.dz-previewable) .dz-details .dz-download-click {
+    display: none;
+}
+
+.dz-preview.dz-complete.dz-previewable .dz-details .dz-thumbnail:has(img[src]) .dz-download-click {
+    top: -40%;
+}
+
+.dz-preview.dz-complete.dz-previewable .dz-details .dz-thumbnail:hover .dz-download-click {
+    visibility: visible;
+    opacity: 1;
+}
+.dz-preview.dz-complete.dz-previewable .dz-details .dz-thumbnail .dz-nopreview,
+.dz-preview.dz-complete.dz-previewable .dz-details .dz-thumbnail img[src] {
+    margin-top: -0.6rem;
+    transition: all .2s ease-in-out;
+    visibility: visible;
+    opacity: 1;
+}
+
+.dz-preview.dz-complete.dz-previewable .dz-details .dz-thumbnail:hover .dz-nopreview,
+.dz-preview.dz-complete.dz-previewable .dz-details .dz-thumbnail:hover img[src] {
+    visibility: hidden;
+    opacity: 0;
+}
