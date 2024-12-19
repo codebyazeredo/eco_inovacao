@@ -10,7 +10,10 @@
 
     <div class="row">
         <div class="col-md-12">
-            <x-input-label for="nome_evento" :value="__('Nome do evento')"/>
+            <div class="d-flex align-items-center">
+                <x-input-label for="nome_evento" :value="__('Nome do evento')" />
+                <x-obrigatorio-simbolo />
+            </div>
             <x-text-input id="nome_evento" name="nome_evento" type="text" class="mt-1 block w-full"
                           placeholder="Digite o nome do evento" maxlength="100"/>
             <x-input-error :messages="$errors->get('nome_evento')" class="mt-2"/>
@@ -32,7 +35,10 @@
         </div>
 
         <div class="col-md-3 mt-7">
-            <x-input-label for="assunto" :value="__('Assunto')"/>
+            <div class="d-flex align-items-center">
+                <x-input-label for="assunto" :value="__('Assunto')" />
+                <x-obrigatorio-simbolo />
+            </div>
             <select id="assunto-eventos-select2" name="categoriasEventos[]"
                     class="js-select2-multiple shadow sm:rounded-lg" multiple="multiple" style="width: 100%;">
                 <option>1</option>
@@ -42,7 +48,7 @@
             <x-input-error :messages="$errors->get('assunto')" class="mt-2"/>
         </div>
 
-        <div class="col-md-3 mt-7">
+        <div class="col-md-3 mt-8">
             <x-input-label for="categoria" :value="__('Categoria (opcional)')"/>
             <select id="categoria-eventos-select2"
                     name="categoria"
@@ -56,7 +62,10 @@
         </div>
 
         <div class="col-md-3 mt-7">
+            <div class="d-flex align-items-center">
             <x-input-label for="classificacao" :value="__('Classificação Indicativa')"/>
+                <x-obrigatorio-simbolo />
+            </div>
             <select id="classificacao-eventos-select2" name="classificacao"
                     class="js-example-basic-single" style="width: 100%;">
                 <option>1</option>
@@ -66,15 +75,16 @@
             <x-input-error :messages="$errors->get('categorias')" class="mt-2"/>
         </div>
 
-        <div class="col-md-2" style="transform: translate(20%, 60%)">
-            <div class="form-check form-switch">
+        <div class="col-md-3 mt-7">
+            <x-input-label for="eventoPrivadoSwitch" :value="__('Evento privado')" />
+            <div class="form-check form-switch d-flex justify-content-start">
                 <input class="form-check-input" type="checkbox" id="eventoPrivadoSwitch">
-                <label class="form-check-label" for="eventoPrivadoSwitch">Evento privado</label>
             </div>
         </div>
     </div>
-</section>
 
-<script src="{{ asset('js/views/Evento/_form-info.js') }}"></script>
+
+
+    <script src="{{ asset('js/views/Evento/_form-info.js') }}"></script>
 
 

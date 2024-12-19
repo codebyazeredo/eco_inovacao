@@ -23,7 +23,10 @@
 
     <div class="row mb-3">
         <div class="col-md-3">
-            <x-input-label for="data_inicio" :value="__('Data de Início')"/>
+            <div class="d-flex align-items-center">
+                <x-input-label for="data_inicio" :value="__('Data de Início')"/>
+                <x-obrigatorio-simbolo/>
+            </div>
             <div class="input-group">
                 <span class="input-group-text"><i class="fa-solid fa-calendar-days"></i></span>
                 <x-text-input id="data_inicio" name="data_inicio" type="text" class="form-control"
@@ -33,7 +36,10 @@
         </div>
 
         <div class="col-md-2 mr-12">
-            <x-input-label for="hora_inicio" :value="__('Hora de Início')"/>
+            <div class="d-flex align-items-center">
+                <x-input-label for="hora_inicio" :value="__('Hora de Início')"/>
+                <x-obrigatorio-simbolo/>
+            </div>
             <div class="input-group">
                 <span class="input-group-text"><i class="fa-solid fa-clock"></i></span>
                 <x-text-input id="hora_inicio" name="hora_inicio" type="text" class="form-control"
@@ -43,7 +49,10 @@
         </div>
 
         <div class="col-md-3 ml-12">
-            <x-input-label for="data_fim" :value="__('Data de Término')"/>
+            <div class="d-flex align-items-center">
+                <x-input-label for="data_fim" :value="__('Data de Término')"/>
+                <x-obrigatorio-simbolo/>
+            </div>
             <div class="input-group">
                 <span class="input-group-text"><i class="fa-solid fa-calendar-days"></i></span>
                 <x-text-input id="data_fim" name="data_fim" type="text" class="form-control"
@@ -53,7 +62,10 @@
         </div>
 
         <div class="col-md-2">
-            <x-input-label for="hora_fim" :value="__('Hora de Término')"/>
+            <div class="d-flex align-items-center">
+                <x-input-label for="hora_fim" :value="__('Hora de Término')"/>
+                <x-obrigatorio-simbolo/>
+            </div>
             <div class="input-group">
                 <span class="input-group-text"><i class="fa-solid fa-clock"></i></span>
                 <x-text-input id="hora_fim" name="hora_fim" type="text" class="form-control"

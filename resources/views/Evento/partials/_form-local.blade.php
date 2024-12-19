@@ -24,28 +24,39 @@
             </div>
 
             <div class="mb-3">
-                <x-input-label for="local_nome" :value="__('Nome do local')"/>
+                <div class="d-flex align-items-center">
+                    <x-input-label for="local_nome" :value="__('Nome do local')"/>
+                    <x-obrigatorio-simbolo />
+                </div>
                 <x-text-input id="local_nome" name="local_nome" type="text" class="mt-1 block w-full" maxlength="100"/>
                 <x-input-error :messages="$errors->get('local_nome')" class="mt-2"/>
                 <small id="charCountLocal" class="form-text text-muted">0 / 100 caracteres</small>
             </div>
 
             <div class="mb-3">
-                <x-input-label for="cep" :value="__('CEP')"/>
-                <x-text-input id="cep" name="cep" type="text" class="mt-1 block w-full"
-                              />
+                <div class="d-flex align-items-center">
+                    <x-input-label for="cep" :value="__('CEP')"/>
+                    <x-obrigatorio-simbolo />
+                </div>
+                <x-text-input id="cep" name="cep" type="text" class="mt-1 block w-full"/>
                 <x-input-error :messages="$errors->get('cep')" class="mt-2"/>
             </div>
 
             <div class="row mb-3">
                 <div class="col-md-6">
-                    <x-input-label for="cidade" :value="__('Cidade')"/>
+                    <div class="d-flex align-items-center">
+                        <x-input-label for="cidade" :value="__('Cidade')"/>
+                        <x-obrigatorio-simbolo />
+                    </div>
                     <x-text-input id="cidade" name="cidade" type="text" class="mt-1 block w-full" value="Criciúma" readonly/>
                     <x-input-error :messages="$errors->get('cidade')" class="mt-2"/>
                 </div>
 
                 <div class="col-md-6">
-                    <x-input-label for="estado" :value="__('Estado')"/>
+                    <div class="d-flex align-items-center">
+                        <x-input-label for="estado" :value="__('Estado')"/>
+                        <x-obrigatorio-simbolo />
+                    </div>
                     <select id="estado" name="estado" class="mt-1 block w-full">
                         <option value="SC" selected>SC</option>
                     </select>
