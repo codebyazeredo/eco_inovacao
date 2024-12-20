@@ -8,10 +8,13 @@ Route::get('/', function () {
     return view('inicio.index');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware('auth')->name('dashboard');
+Route::middleware(['auth', \App\Http\Middleware\IsAdmin::class])->get('/dashboard/admin', function () {
+    return view('area-admin.dashboard');
+})->name('admin.dashboard');
 
+Route::get('/dashboard/produtor', function () {
+    return view('area-produtor.dashboard');
+})->middleware('auth')->name('produtor.dashboard');
 
 Route::get('/inicio', function () {
     return view('inicio.index');
