@@ -9,8 +9,8 @@ class IsAdmin
 {
     public function handle(Request $request, Closure $next)
     {
-        if (!auth()->user() || !auth()->user()->isAdmin()) {
-            return redirect()->route('home')->with('error', 'Acesso restrito');
+        if (!auth()->check() || !auth()->user()->isAdmin) {
+            abort(403, 'Acesso restrito a administradores');
         }
 
         return $next($request);
