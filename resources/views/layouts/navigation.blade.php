@@ -27,10 +27,15 @@
                         <x-nav-link :href="route('eventos.create')" :active="request()->routeIs('eventos')">
                             {{ __('Criar Evento') }}
                         </x-nav-link>
-
-                        <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                            {{ __('Área do produtor') }}
-                        </x-nav-link>
+                        @if(Auth::user()->isAdmin())
+                            <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                                {{ __('Área do Administrador') }}
+                            </x-nav-link>
+                        @else
+                            <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                                {{ __('Área do produtor') }}
+                            </x-nav-link>
+                        @endif
                     @else
                         <x-nav-link :href="route('login')" :active="request()->routeIs('login')">
                             {{ __('Login') }}
@@ -59,6 +64,18 @@
                                 <x-dropdown-link :href="route('profile.edit')">
                                     {{ __('Perfil') }}
                                 </x-dropdown-link>
+
+                                @if(Auth::user()->isAdmin())
+                                    <x-dropdown-link>
+                                        {{ __('Categorias') }}
+                                    </x-dropdown-link>
+                                    <x-dropdown-link>
+                                        {{ __('Assuntos') }}
+                                    </x-dropdown-link>
+                                    <x-dropdown-link>
+                                         {{ __('Classificações') }}
+                                    </x-dropdown-link>
+                                @endif
 
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
