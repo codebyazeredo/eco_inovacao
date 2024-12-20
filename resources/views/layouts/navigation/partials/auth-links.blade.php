@@ -4,11 +4,11 @@
             {{ __('Criar Evento') }}
         </x-nav-link>
         @if(Auth::user()->isAdmin())
-            <x-nav-link :href="route('admin.dashboard')" :active="request()->routeIs('admin.dashboard')">
+            <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Área do Administrador') }}
             </x-nav-link>
         @else
-            <x-nav-link :href="route('produtor.dashboard')" :active="request()->routeIs('produtor.dashboard')">
+            <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Área do produtor') }}
             </x-nav-link>
         @endif
