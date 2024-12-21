@@ -27,4 +27,7 @@
     </div>
 
     @include('layouts.navigation.partials.mobile-menu')
+    @include('dashboard.isAdmin.modal-create-assuntos')
+    @include('dashboard.isAdmin.modal-create-categorias')
+    @include('dashboard.isAdmin.modal-create-classificacoes')
 </nav>

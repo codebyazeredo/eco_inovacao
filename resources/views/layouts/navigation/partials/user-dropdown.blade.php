@@ -16,28 +16,32 @@
             </x-slot>
 
             <x-slot name="content">
-                <x-dropdown-link :href="route('profile.edit')">
+                <a href="{{ route('profile.edit') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                     {{ __('Perfil') }}
-                </x-dropdown-link>
+                </a>
 
                 @if(Auth::user()->isAdmin())
-                    <x-dropdown-link>
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#modal-create-categorias"
+                       class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                         {{ __('Categorias') }}
-                    </x-dropdown-link>
-                    <x-dropdown-link>
+                    </a>
+
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#modal-create-assuntos"
+                       class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                         {{ __('Assuntos') }}
-                    </x-dropdown-link>
-                    <x-dropdown-link>
+                    </a>
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#modal-create-classificacoes"
+                       class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                         {{ __('Classificações') }}
-                    </x-dropdown-link>
+                    </a>
                 @endif
 
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
-                    <x-dropdown-link :href="route('logout')"
-                                     onclick="event.preventDefault(); this.closest('form').submit();">
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();"
+                       class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                         {{ __('Sair') }}
-                    </x-dropdown-link>
+                    </a>
                 </form>
             </x-slot>
         </x-dropdown>
