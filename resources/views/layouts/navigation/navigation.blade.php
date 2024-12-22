@@ -31,3 +31,5 @@
     @include('dashboard.isAdmin.modal-create-categorias')
     @include('dashboard.isAdmin.modal-create-classificacoes')
 </nav>
+
+<script src="{{ asset('js/views/Assunto/modal-create-assuntos.js') }}"></script>

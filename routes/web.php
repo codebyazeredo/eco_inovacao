@@ -25,3 +25,4 @@ Route::middleware('auth')->group(function () {
 Route::resource('eventos', EventoController::class);
 
 require __DIR__.'/auth.php';
+require  __DIR__.'/assuntos.php';
