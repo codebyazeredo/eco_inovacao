@@ -8,9 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Assunto extends Model
 {
     use HasFactory;
-
+    public $timestamps = false;
+    protected $table = 'assuntos';
     protected $fillable = [
-        'nome'
+        'tipo',
+        'descricao'
     ];
 
     public function eventos()

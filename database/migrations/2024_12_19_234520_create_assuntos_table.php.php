@@ -10,7 +10,8 @@ return new class extends Migration
     {
         Schema::create('assuntos', function (Blueprint $table) {
             $table->id();
-            $table->string('nome');
+            $table->string('tipo');
+            $table->string('descricao');
         });
     }
 

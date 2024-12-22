@@ -10,7 +10,8 @@ return new class extends Migration
     {
         Schema::create('classificacoes_indicativas', function (Blueprint $table) {
             $table->id();
-            $table->string('classificacao');
+            $table->string('nome');
+            $table->string('sigla', 5);
         });
     }
 

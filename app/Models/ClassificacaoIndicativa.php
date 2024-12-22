@@ -9,8 +9,11 @@ class ClassificacaoIndicativa extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+    protected $table = 'classificacoes_indicativas';
     protected $fillable = [
-        'classificacao'
+        'nome',
+        'sigla',
     ];
 
     public function eventos()
