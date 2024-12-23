@@ -27,3 +27,4 @@ Route::resource('eventos', EventoController::class);
 require __DIR__.'/auth.php';
 require  __DIR__.'/assuntos.php';
 require  __DIR__.'/categorias.php';
+require  __DIR__.'/classificacoesIndicativas.php';
