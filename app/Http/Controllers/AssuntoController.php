@@ -57,4 +57,17 @@ class AssuntoController extends Controller
 
         return response()->json(['message' => 'Assunto excluído com sucesso']);
     }
+
+    public function getAssuntosForSelect2(): JsonResponse
+    {
+        $assuntos = Assunto::all();
+        $results = $assuntos->map(function ($assunto) {
+            return [
+                'id' => $assunto->id,
+                'text' => $assunto->tipo,
+            ];
+        });
+
+        return response()->json($results);
+    }
 }

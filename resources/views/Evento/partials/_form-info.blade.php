@@ -39,11 +39,8 @@
                 <x-input-label for="assunto" :value="__('Assunto')" />
                 <x-obrigatorio-simbolo />
             </div>
-            <select id="assunto-eventos-select2" name="categoriasEventos[]"
-                    class="js-select2-multiple shadow sm:rounded-lg" multiple="multiple" style="width: 100%;">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
+            <select id="assunto-eventos-select2" name="assuntoEventos[]" class="js-select2-multiple shadow sm:rounded-lg" multiple="multiple" style="width: 100%;">
+
             </select>
             <x-input-error :messages="$errors->get('assunto')" class="mt-2"/>
         </div>

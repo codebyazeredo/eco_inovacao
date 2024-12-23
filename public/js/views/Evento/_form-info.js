@@ -9,9 +9,23 @@ document.addEventListener('DOMContentLoaded', function () {
             allowClear: true
         });
 
-        $('#assunto-eventos-select2').select2({
-            placeholder: "Selecione o assunto",
-            allowClear: true
+        $(document).ready(function () {
+            $('#assunto-eventos-select2').select2({
+                placeholder: "Selecione o assunto",
+                allowClear: true,
+                ajax: {
+                    url: '/select2/assuntos',
+                    type: 'GET',
+                    dataType: 'json',
+                    delay: 250,
+                    processResults: function (data) {
+                        return {
+                            results: data
+                        };
+                    },
+                    cache: true
+                }
+            });
         });
 
         $('#classificacao-eventos-select2').select2({

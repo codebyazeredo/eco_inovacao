@@ -8,3 +8,4 @@ Route::post('assuntos', [AssuntoController::class, 'store']);
 Route::delete('assuntos/{id}', [AssuntoController::class, 'destroy']);
 Route::get('/assuntos/{id}', [AssuntoController::class, 'show']);
 Route::put('/assuntos/{id}', [AssuntoController::class, 'update']);
+Route::get('/select2/assuntos', [AssuntoController::class, 'getAssuntosForSelect2']);
