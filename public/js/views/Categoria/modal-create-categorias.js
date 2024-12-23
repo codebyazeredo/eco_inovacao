@@ -1,9 +1,9 @@
 $(document).ready(function () {
     const $formularioCriarCategoria = $('#form-create-categoria');
     const $listaCategorias = $('#categorias-list');
-    const $modalCategoriaTitle = $('#modal-categorias-title');
+    const $modalCategoriaTitle = $('#modal-categoria-title');
     const $botaoCriarEditarCategoria = $('#btn-create-categoria');
-    const $btnCancelarEdicaoCategoria = $('#btn-cancelar-edicao');
+    const $btnCancelarEdicaoCategoria = $('#btn-cancelar-edicao-categoria');
     const csrfToken = $('meta[name="csrf-token"]').attr('content');
 
     $.ajaxSetup({
@@ -33,31 +33,29 @@ $(document).ready(function () {
 
         try {
             if (editingCategoriaId) {
-                const resposta = await $.ajax({
+                await $.ajax({
                     url: `/categorias/${editingCategoriaId}`,
                     method: 'PUT',
                     contentType: 'application/json',
                     data: JSON.stringify(dados),
                 });
-
                 Swal.fire({
                     icon: 'success',
                     title: 'Sucesso',
-                    text: resposta.message || 'Categoria atualizada com sucesso!',
+                    text: 'Categoria atualizada com sucesso!',
                     confirmButtonColor: '#000000'
                 });
             } else {
-                const resposta = await $.ajax({
+                await $.ajax({
                     url: '/categorias',
                     method: 'POST',
                     contentType: 'application/json',
                     data: JSON.stringify(dados),
                 });
-
                 Swal.fire({
                     icon: 'success',
                     title: 'Sucesso',
-                    text: resposta.message || 'Categoria criada com sucesso!',
+                    text: 'Categoria criada com sucesso!',
                     confirmButtonColor: '#000000'
                 });
             }
@@ -127,7 +125,7 @@ $(document).ready(function () {
         }).then(async (result) => {
             if (result.isConfirmed) {
                 try {
-                    const resposta = await $.ajax({
+                    await $.ajax({
                         url: `/categorias/${id}`,
                         method: 'DELETE',
                         contentType: 'application/json',
@@ -135,7 +133,7 @@ $(document).ready(function () {
                     Swal.fire({
                         icon: 'success',
                         title: 'Excluída!',
-                        text: resposta.message || 'Categoria excluída com sucesso!',
+                        text: 'Categoria excluída com sucesso!',
                         confirmButtonColor: '#000000'
                     });
                     await atualizarListaCategorias();

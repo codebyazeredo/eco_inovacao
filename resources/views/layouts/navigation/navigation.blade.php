@@ -33,3 +33,6 @@
 </nav>
 
 <script src="{{ asset('js/views/Assunto/modal-create-assuntos.js') }}"></script>
+<script src="{{ asset('js/views/Categoria/modal-create-categorias.js') }}"></script>
+<script src="{{ asset('js/views/ClassificacaoIndicativa/modal-create-classificacoes.js') }}"></script>
+

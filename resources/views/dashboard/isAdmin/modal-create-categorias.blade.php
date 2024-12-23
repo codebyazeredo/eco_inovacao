@@ -35,7 +35,10 @@
                             Criar Nova Categoria
                         </button>
 
-                        <button type="button" class="btn btn-outline-secondary mb-3 d-none" id="btn-cancelar-edicao" onclick="cancelarEdicaoCategoria()"><i class="bi bi-x"></i> Cancelar Edição</button>
+                        <button type="button" class="btn btn-outline-secondary mb-3 d-none" id="btn-cancelar-edicao-categoria" onclick="cancelarEdicaoCategoria()">
+                            <i class="bi bi-x"></i> Cancelar Edição
+                        </button>
+
                     </form>
                 </div>
 
